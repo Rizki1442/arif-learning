@@ -31,28 +31,28 @@
             
             <li>
                 <details>
-                  <summary>Pelajaran Mi</summary>
-                  <ul class="pelajaran p-2">
-                    <li><a href="{{ url_for('pelajaran_mi') }}#ah">Al-Qur'an Hadis</a></li>
-                    <li><a href="{{ url_for('pelajaran_mi') }}#aa">Akidah Akhlak</a></li>
-                    <li><a href="{{ url_for('pelajaran_mi') }}#fikih">Fikih</a></li>
-                    <li><a href="{{ url_for('pelajaran_mi') }}#SKI">Sejarah Kebudayaan Islam</a></li>
-                    <li><a href="{{ url_for('pelajaran_mi') }}#ba">Bahasa Arab</a></li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details>
-                  <summary>Pelajaran SD</summary>
-                  <ul class="pelajaran p-2">
-                    <li><a href="{{ url_for('pelajaran_sd') }}#mtk">Matematika</a></li>
-                    <li><a href="{{ url_for('pelajaran_sd') }}#bi">Bahasa Indonesia</a></li>
-                    <li><a href="{{ url_for('pelajaran_sd') }}#ipa">Ilmu Pengetahuan Alam</a></li>
-                    <li><a href="{{ url_for('pelajaran_sd') }}#pp">Pendidikan Pancasila</a></li>
-                    <li><a href="{{ url_for('pelajaran_sd') }}#senbud">Seni Budaya dan Prakarya</a></li>
-                    <li><a href="{{ url_for('pelajaran_sd') }}#pjok">Pendidikan Jasmani, Olahraga dan Kesehatan</a></li>
-                  </ul>
-                </details>
+                    <summary>Pelajaran Mi</summary>
+                    <ul class="pelajaran p-2">
+                      <li><a href="{{ url_for('pelajaran_mi') }}#ah">Al-Qur'an Hadis</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#aa">Akidah Akhlak</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#fikih">Fikih</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#SKI">SKI</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#ba">B.Arab</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>Pelajaran SD</summary>
+                    <ul class="pelajaran p-2">
+                      <li><a href="{{ url_for('pelajaran_sd') }}#mtk">MTK</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#bi">B.INDO</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#ipa">IPA</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#pp">PP</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#senbud">SENBUD</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#pjok">PJOK</a></li>
+                    </ul>
+                  </details>
               </li>
               <li><a href="{{ url_for('home') }}#about">Tentang Kami</a></li>
               <li><a href="{{ url_for('home') }}#visimisi">Visi Misi</a></li>  
@@ -72,8 +72,8 @@
                       <li><a href="{{ url_for('pelajaran_mi') }}#ah">Al-Qur'an Hadis</a></li>
                       <li><a href="{{ url_for('pelajaran_mi') }}#aa">Akidah Akhlak</a></li>
                       <li><a href="{{ url_for('pelajaran_mi') }}#fikih">Fikih</a></li>
-                      <li><a href="{{ url_for('pelajaran_mi') }}#SKI">Sejarah Kebudayaan Islam</a></li>
-                      <li><a href="{{ url_for('pelajaran_mi') }}#ba">Bahasa Arab</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#SKI">SKI</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#ba">B.Arab</a></li>
                     </ul>
                   </details>
                 </li>
@@ -81,12 +81,12 @@
                   <details>
                     <summary>Pelajaran SD</summary>
                     <ul class="pelajaran p-2">
-                      <li><a href="{{ url_for('pelajaran_sd') }}#mtk">Matematika</a></li>
-                      <li><a href="{{ url_for('pelajaran_sd') }}#bi">Bahasa Indonesia</a></li>
-                      <li><a href="{{ url_for('pelajaran_sd') }}#ipa">Ilmu Pengetahuan Alam</a></li>
-                      <li><a href="{{ url_for('pelajaran_sd') }}#pp">Pendidikan Pancasila</a></li>
-                      <li><a href="{{ url_for('pelajaran_sd') }}#senbud">Seni Budaya dan Prakarya</a></li>
-                      <li><a href="{{ url_for('pelajaran_sd') }}#pjok">Pendidikan Jasmani, Olahraga dan Kesehatan</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#mtk">MTK</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#bi">B.INDO</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#ipa">IPA</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#pp">PP</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#senbud">SENBUD</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#pjok">PJOK</a></li>
                     </ul>
                   </details>
                 </li>
@@ -366,37 +366,47 @@
 </div>
 </div>
 
- <!-- Bagian Kontak -->
- <section class="py-16 px-4 sm:px-6 lg:px-8" id="kontak">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-black">Kontak Kami</h2>
-      <p class="mt-4 text-lg text-gray-300">Kami siap membantu Anda! Silakan hubungi kami melalui detail kontak berikut.</p>
-
-      <div class="mt-8 grid gap-8 lg:grid-cols-3 justify-end">
-        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-300">
-          <h3 class="text-xl font-semibold text-black">Alamat</h3>
-          <p class="mt-4 text-gray-600"></p>
+ <!-- Container Informasi Kontak -->
+<div class="container mx-auto flex justify-center items-center min-h-screen mb-5" id="kontak">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg mt-5">
+      <h2 class="text-2xl font-semibold text-center mb-6 text-black">Kontak Kami</h2>
+  
+      <!-- Informasi Kontak -->
+      <div class="mb-4">
+        <label class="block text-gray-700">Nomor WhatsApp</label>
+        <a href="https://wa.me/6283817599817" class="w-full p-3 text-blue-600 hover:underline">+62 83817599817</a><div class="text-center mt-4">
+          <a href="https://wa.me/6283817599817" target="_blank" class="w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-2 rounded-lg shadow-lg hover:from-blue-600 hover:to-indigo-600 transition duration-300 ease-in-out transform hover:scale-105">
+            Hubungi Kami
+          </a>
         </div>
-      
-        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-300">
-          <h3 class="text-xl font-semibold text-black">Telepon</h3>
-          <p class="mt-4 text-gray-600"></p>
-        </div>
-      
-        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-300">
-          <h3 class="text-xl font-semibold text-black">Email</h3>
-          <p class="mt-4 text-gray-"></p>
-        </div>
-      </div>      
-      
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Email</label>
+        <a href="mailto:info@example.com" class="w-full p-3 text-blue-600 hover:underline">contoh@gmail.com</a>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Alamat</label>
+        <p class="w-full p-3 text-black"></p>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Jam Buka</label>
+        <p class="w-full p-3 text-black">Buka setiap hari</p>
+      </div>
+  
+      <!-- Tombol Kembali -->
+      <div class="text-center mt-4">
+        <a href="/" class="w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-2 rounded-lg shadow-lg hover:from-blue-600 hover:to-indigo-600 transition duration-300 ease-in-out transform hover:scale-105">
+          Kembali ke Beranda
+        </a>
+      </div>
     </div>
-  </section>
+  </div>
 
   <!-- Bagian Lokasi -->
   <section class="py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-bold text-black">Lokasi Kami</h2>
-      <p class="mt-4 text-lg text-gray-100">Temui kami di lokasi berikut ini.</p>
+      <p class="mt-4 text-lg text-black">Temui kami di lokasi berikut ini.</p>
 
       <!-- Peta atau gambar lokasi -->
       <div class="mt-8">
