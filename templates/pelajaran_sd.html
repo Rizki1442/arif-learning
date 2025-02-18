@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- DaisyUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS (Jika ada) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Home - Arif Learning{% endblock %}</title>
+    <link rel="icon" href="https://cdn-icons-png.freepik.com/256/12379/12379619.png?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar shadow shadow-lg sticky top-0 left-0 right-0 z-50 bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+            
+            <li>
+                <details>
+                  <summary>Pelajaran Mi</summary>
+                  <ul class="pelajaran p-2">
+                    <li><a href="{{ url_for('pelajaran_mi') }}#ah">Al-Qur'an Hadis</a></li>
+                    <li><a href="{{ url_for('pelajaran_mi') }}#aa">Akidah Akhlak</a></li>
+                    <li><a href="{{ url_for('pelajaran_mi') }}#fikih">Fikih</a></li>
+                    <li><a href="{{ url_for('pelajaran_mi') }}#SKI">Sejarah Kebudayaan Islam</a></li>
+                    <li><a href="{{ url_for('pelajaran_mi') }}#ba">Bahasa Arab</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>Pelajaran SD</summary>
+                  <ul class="pelajaran p-2">
+                    <li><a href="{{ url_for('pelajaran_sd') }}#mtk">Matematika</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#bi">Bahasa Indonesia</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#ipa">Ilmu Pengetahuan Alam</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#pp">Pendidikan Pancasila</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#senbud">Seni Budaya dan Prakarya</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#pjok">Pendidikan Jasmani, Olahraga dan Kesehatan</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li><a href="{{ url_for('home') }}#about">Tentang Kami</a></li>
+              <li><a href="{{ url_for('home') }}#visimisi">Visi Misi</a></li>  
+            <li><a href="{{ url_for('home') }}#kontak">Hubungi Kami</a></li>  
+            <li><a href="{{ url_for('erd') }}">ERD</a></li>  
+            </ul>
+          </div>
+          <a class="text-xl text-black">Arif Learning</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            
+            <li>
+                <details>
+                    <summary>Pelajaran Mi</summary>
+                    <ul class="pelajaran p-2">
+                      <li><a href="{{ url_for('pelajaran_mi') }}#ah">Al-Qur'an Hadis</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#aa">Akidah Akhlak</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#fikih">Fikih</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#SKI">Sejarah Kebudayaan Islam</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#ba">Bahasa Arab</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>Pelajaran SD</summary>
+                    <ul class="pelajaran p-2">
+                      <li><a href="{{ url_for('pelajaran_sd') }}#mtk">Matematika</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#bi">Bahasa Indonesia</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#ipa">Ilmu Pengetahuan Alam</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#pp">Pendidikan Pancasila</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#senbud">Seni Budaya dan Prakarya</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#pjok">Pendidikan Jasmani, Olahraga dan Kesehatan</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li><a href="{{ url_for('home') }}#about">Tentang Kami</a></li>
+                <li><a href="{{ url_for('home') }}#visimisi">Visi Misi</a></li>
+              <li><a href="{{ url_for('home') }}#kontak">Hubungi Kami</a></li>  
+              <li><a href="{{ url_for('erd') }}">ERD</a></li>  
+          </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="{{ url_for('home') }}">
+                <img src="https://cdn-icons-png.freepik.com/256/12379/12379619.png?ga=GA1.1.559232191.1739536249&semt=ais_hybrid"
+                     alt="Link" class="h-9 w-9 rounded-full object-cover md:h-9 md:w-9 min-h-[36px] min-w-[36px] mr-3">
+            </a>
+        </div>
+      </div>
+
+
+      <!-- Hero -->
+    <div class="card w-full bg-white mt-10 px-4" id="sd">
+        <h1 class="font-bold text-center text-black text-xl">Pelajaran Sekolah Dasar</h1>
+        <p class="text-center mb-5 text-grey text-sm italic">Silahkan pelajari materi dibawah ini.</p>
+
+        <h1 class="font-bold text-start text-black text-xl px-4 mb-4" id="mtk">MATEMATIKA</h1>
+        <div class="flex flex-col md:flex-row items-center">
+            <figure class="w-full md:w-1/2">
+                <img src="https://img.freepik.com/premium-vector/blood-cell-geek-cartoon-cartoon-mascot-vector_193274-4648.jpg?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" 
+                     alt="matematika" class="rounded-lg w-full h-auto"/>
+            </figure>
+            <div class="card-body w-full md:w-1/2 pl-0 md:pl-6 mt-4 md:mt-0">
+                <h2 class="card-title text-black font-bold">MATEMATIKA</h2>
+                <p class="text-black italic">Pembelajaran Matematika di Sekolah Dasar (SD) berfokus pada dasar-dasar matematika yang mencakup penjumlahan, pengurangan, perkalian, dan pembagian. Siswa juga belajar tentang bilangan pecahan, desimal, dan persentase. Dalam geometri, mereka dikenalkan dengan bangun datar dan bangun ruang, serta cara menghitung luas, keliling, dan volume. Selain itu, siswa mempelajari waktu dan pengukuran dalam kehidupan sehari-hari. Pembelajaran matematika bertujuan untuk mengembangkan kemampuan berhitung, berpikir logis, dan memecahkan masalah secara sistematis.
+                </p>
+            </div>
+        </div>
+
+
+        <h1 class="font-bold text-start text-black text-xl px-4 mb-4 mt-5" id="bi">BAHASA INDONESIA</h1>
+        <div class="flex flex-col md:flex-row items-center">
+            <figure class="w-full md:w-1/2">
+                <img src="https://img.freepik.com/free-vector/flat-indonesian-national-education-day-illustration_23-2148904432.jpg?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" 
+                     alt="FIKIH" class="rounded-lg w-full h-auto"/>
+            </figure>
+            <div class="card-body w-full md:w-1/2 pl-0 md:pl-6 mt-4 md:mt-0">
+                <h2 class="card-title text-black font-bold">BAHASA INDONESIA</h2>
+                <p class="text-black italic">Pembelajaran Bahasa Indonesia di tingkat Sekolah Dasar (SD) bertujuan untuk mengembangkan keterampilan siswa dalam berkomunikasi secara lisan dan tulisan. Siswa diajarkan membaca teks untuk memahami informasi dan menganalisis isi bacaan. Dalam menulis, siswa dilatih untuk membuat teks seperti narasi, deskripsi, dan surat resmi dengan tata bahasa yang benar. Pembelajaran berbicara fokus pada keterampilan berbicara di depan umum, seperti presentasi dan diskusi, sedangkan dalam mendengarkan, siswa belajar memahami informasi yang disampaikan orang lain. Selain itu, siswa juga mempelajari struktur kalimat dan tata bahasa yang benar. Pembelajaran ini bertujuan untuk membuat siswa mampu berkomunikasi dengan baik dalam bahasa Indonesia.</p>
+            </div>
+        </div>
+
+        <h1 class="font-bold text-start text-black text-xl px-4 mb-4 mt-5" id="ipa">ILMU PENGETAHUAN ALAM</h1>
+        <div class="flex flex-col md:flex-row items-center">
+            <figure class="w-full md:w-1/2">
+                <img src="https://img.freepik.com/premium-vector/photo-collage-school-realistic-square-frames-composition-polaroid-picture-frames-realistic_1292395-846.jpg?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" 
+                     alt="FIKIH" class="rounded-lg w-full h-auto"/>
+            </figure>
+            <div class="card-body w-full md:w-1/2 pl-0 md:pl-6 mt-4 md:mt-0">
+                <h2 class="card-title text-black font-bold">ILMU PENGETAHUAN ALAM</h2>
+                <p class="text-black italic">Pembelajaran Ilmu Pengetahuan Alam (IPA) di Sekolah Dasar (SD) bertujuan untuk mengenalkan siswa pada konsep dasar alam semesta dan fenomena yang terjadi di sekitar mereka. Siswa diajarkan tentang makhluk hidup, perubahan pada benda, energi, dan lingkungan. Mereka mempelajari struktur tubuh manusia, flora dan fauna, serta proses-proses alam seperti siklus air dan perubahan cuaca. IPA juga mengajarkan konsep dasar fisis seperti gaya, kecepatan, dan energi, serta bagaimana hal tersebut berinteraksi di dunia nyata. Pembelajaran IPA di SD bertujuan untuk membentuk rasa ingin tahu siswa dan mengembangkan kemampuan mereka untuk mengamati dan memahami fenomena alam secara sederhana.</p>
+            </div>
+        </div>
+
+
+        <h1 class="font-bold text-start text-black text-xl px-4 mb-4 mt-5" id="pp">PENDIDIKAN PANCASILA</h1>
+        <div class="flex flex-col md:flex-row items-center">
+            <figure class="w-full md:w-1/2">
+                <img src="https://img.freepik.com/free-vector/cute-children-man-soldier-respectful-indonesian-flag-cartoon-vector-icon-illustration-holiday_138676-9924.jpg?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" 
+                     alt="FIKIH" class="rounded-lg w-full h-auto"/>
+            </figure>
+            <div class="card-body w-full md:w-1/2 pl-0 md:pl-6 mt-4 md:mt-0">
+                <h2 class="card-title text-black font-bold">PENDIDIKAN PANCASILA</h2>
+                <p class="text-black italic">Pembelajaran Pendidikan Pancasila di Sekolah Dasar (SD) bertujuan untuk mengenalkan nilai-nilai dasar yang terkandung dalam Pancasila sebagai dasar negara Indonesia. Siswa diajarkan untuk memahami lima sila Pancasila dan bagaimana nilai-nilai tersebut diterapkan dalam kehidupan sehari-hari. Pembelajaran ini mengajarkan pentingnya persatuan, keadilan sosial, demokrasi, serta toleransi antar sesama dalam kehidupan bermasyarakat. Selain itu, siswa juga diajarkan untuk menghargai perbedaan dan memperkuat rasa cinta tanah air serta identitas nasional. Melalui pembelajaran Pancasila, siswa diharapkan dapat menerapkan nilai-nilai luhur tersebut dalam berinteraksi dengan orang lain dan dalam kehidupan sosial yang harmonis.</p>
+            </div>
+        </div>
+
+
+        <h1 class="font-bold text-start text-black text-xl px-4 mb-4 mt-5" id="senbud">SENI BUDAYA DAN PRAKARYA</h1>
+        <div class="flex flex-col md:flex-row items-center">
+            <figure class="w-full md:w-1/2">
+                <img src="https://img.freepik.com/free-vector/hand-drawn-world-art-day-illustration_52683-159659.jpg?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" 
+                     alt="FIKIH" class="rounded-lg w-full h-auto"/>
+            </figure>
+            <div class="card-body w-full md:w-1/2 pl-0 md:pl-6 mt-4 md:mt-0">
+                <h2 class="card-title text-black font-bold">SENI BUDAYA DAN PRAKARYA</h2>
+                <p class="text-black italic">Pembelajaran Seni Budaya dan Prakarya di Sekolah Dasar (SD) bertujuan untuk mengembangkan kreativitas, imajinasi, dan keterampilan siswa dalam bidang seni dan kerajinan. Siswa diajarkan berbagai macam keterampilan seni, seperti melukis, menari, musik, dan teater, serta prakarya yang melibatkan pembuatan benda kerajinan dari berbagai bahan.
+
+                    Dalam seni budaya, siswa belajar mengenal seni tradisional Indonesia, seperti wayang, tarian daerah, dan musik tradisional, serta menghargai keberagaman budaya. Sementara dalam prakarya, siswa diberi kesempatan untuk membuat kerajinan tangan menggunakan bahan-bahan sederhana, seperti kertas, kain, atau barang bekas, untuk melatih keterampilan motorik halus mereka dan menumbuhkan rasa bangga terhadap karya sendiri.
+                    
+                    Tujuan pembelajaran ini adalah untuk menumbuhkan rasa estetika, kerja tim, serta kemampuan berkarya yang dapat diaplikasikan dalam kehidupan sehari-hari.</p>
+            </div>
+        </div>
+
+
+        <h1 class="font-bold text-start text-black text-xl px-4 mb-4 mt-5" id="pjok">PENDIDIKAN JASMANI, OLAHRAGA, DAN KESEHATAN</h1>
+        <div class="flex flex-col md:flex-row items-center">
+            <figure class="w-full md:w-1/2">
+                <img src="https://img.freepik.com/free-vector/physical-education-concept-illustration_114360-6904.jpg?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" 
+                     alt="FIKIH" class="rounded-lg w-full h-auto"/>
+            </figure>
+            <div class="card-body w-full md:w-1/2 pl-0 md:pl-6 mt-4 md:mt-0">
+                <h2 class="card-title text-black font-bold">PENDIDIKAN JASMANI, OLAHRAGA, DAN KESEHATAN</h2>
+                <p class="text-black italic">Pembelajaran Pendidikan Jasmani, Olahraga, dan Kesehatan (PJOK) di Sekolah Dasar (SD) bertujuan untuk meningkatkan kebugaran fisik, keterampilan motorik, dan pemahaman tentang hidup sehat. Siswa diajarkan berbagai olahraga dasar seperti lari, senam, bola, dan permainan tradisional, yang dapat meningkatkan kekuatan, kelincahan, serta kerjasama tim.
+
+                    Selain itu, dalam aspek kesehatan, siswa diberikan pengetahuan tentang gizi seimbang, pentingnya kebersihan, dan pencegahan penyakit untuk membentuk kebiasaan hidup sehat. Pembelajaran ini juga mencakup pengetahuan tentang tubuh manusia, seperti fungsi organ dan pentingnya olahraga bagi tubuh.
+                    
+                    Tujuan dari PJOK adalah agar siswa tidak hanya bugar secara fisik, tetapi juga memiliki kesadaran tentang pentingnya kesehatan, serta dapat menerapkan pola hidup sehat dalam kehidupan sehari-hari.</p>
+            </div>
+        </div>
+
+
+<!-- Link ke file JavaScript -->
+<script src="../static/script.js"></script>
+
+<footer class="footer footer-center bg-white text-primary-content p-10">
+    <aside>
+      <img src="https://cdn-icons-png.freepik.com/256/12379/12379619.png?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" alt="Logo Arif Learning" width="50" height="50" class="h-10 w-10 rounded-full mr-3" />
+      <p class="font-bold">
+        Arif Learning
+        <br />
+        Sharing pembelajaran disini yuk.
+      </p>
+      <p>Copyright © 2025 - Arif Learning</p>
+  </footer>
+
+ 
+
+</body>
+</html>

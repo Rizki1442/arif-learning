@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- DaisyUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS (Jika ada) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Home - Arif Learning{% endblock %}</title>
+    <link rel="icon" href="https://cdn-icons-png.freepik.com/256/12379/12379619.png?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar shadow shadow-lg sticky top-0 left-0 right-0 z-50 bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+            
+            <li>
+                <details>
+                  <summary>Pelajaran Mi</summary>
+                  <ul class="pelajaran p-2">
+                    <li><a href="{{ url_for('pelajaran_mi') }}#ah">Al-Qur'an Hadis</a></li>
+                    <li><a href="{{ url_for('pelajaran_mi') }}#aa">Akidah Akhlak</a></li>
+                    <li><a href="{{ url_for('pelajaran_mi') }}#fikih">Fikih</a></li>
+                    <li><a href="{{ url_for('pelajaran_mi') }}#SKI">Sejarah Kebudayaan Islam</a></li>
+                    <li><a href="{{ url_for('pelajaran_mi') }}#ba">Bahasa Arab</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>Pelajaran SD</summary>
+                  <ul class="pelajaran p-2">
+                    <li><a href="{{ url_for('pelajaran_sd') }}#mtk">Matematika</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#bi">Bahasa Indonesia</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#ipa">Ilmu Pengetahuan Alam</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#pp">Pendidikan Pancasila</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#senbud">Seni Budaya dan Prakarya</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#pjok">Pendidikan Jasmani, Olahraga dan Kesehatan</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li><a href="{{ url_for('home') }}#about">Tentang Kami</a></li>
+              <li><a href="{{ url_for('home') }}#visimisi">Visi Misi</a></li>  
+            <li><a href="{{ url_for('home') }}#kontak">Hubungi Kami</a></li>  
+            <li><a href="{{ url_for('erd') }}">ERD</a></li>  
+            </ul>
+          </div>
+          <a class="text-xl text-black">Arif Learning</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            
+            <li>
+                <details>
+                    <summary>Pelajaran Mi</summary>
+                    <ul class="pelajaran p-2">
+                      <li><a href="{{ url_for('pelajaran_mi') }}#ah">Al-Qur'an Hadis</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#aa">Akidah Akhlak</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#fikih">Fikih</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#SKI">Sejarah Kebudayaan Islam</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#ba">Bahasa Arab</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>Pelajaran SD</summary>
+                    <ul class="pelajaran p-2">
+                      <li><a href="{{ url_for('pelajaran_sd') }}#mtk">Matematika</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#bi">Bahasa Indonesia</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#ipa">Ilmu Pengetahuan Alam</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#pp">Pendidikan Pancasila</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#senbud">Seni Budaya dan Prakarya</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#pjok">Pendidikan Jasmani, Olahraga dan Kesehatan</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li><a href="{{ url_for('home') }}#about">Tentang Kami</a></li>
+                <li><a href="{{ url_for('home') }}#visimisi">Visi Misi</a></li>
+              <li><a href="{{ url_for('home') }}#kontak">Hubungi Kami</a></li>  
+              <li><a href="{{ url_for('erd') }}">ERD</a></li>  
+          </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="{{ url_for('home') }}">
+                <img src="https://cdn-icons-png.freepik.com/256/12379/12379619.png?ga=GA1.1.559232191.1739536249&semt=ais_hybrid"
+                     alt="Link" class="h-9 w-9 rounded-full object-cover md:h-9 md:w-9 min-h-[36px] min-w-[36px] mr-3">
+            </a>
+        </div>
+      </div>
+
+      <!-- Hero -->
+    <div class="card w-full bg-white mt-10 px-4" id="mi">
+        <h1 class="font-bold text-center text-black text-xl">Pelajaran Madrasah Ibtidaiyah</h1>
+        <p class="text-center mb-5 text-grey text-sm italic">Silahkan pelajari materi dibawah ini.</p>
+
+        <h1 class="font-bold text-start text-black text-xl px-4 mb-4" id="ah">AL-QUR'AN DAN HADIST</h1>
+        <div class="flex flex-col md:flex-row items-center">
+            <figure class="w-full md:w-1/2">
+                <img src="https://img.freepik.com/free-vector/arab-quran-book-icon-white-background_24640-133905.jpg?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" 
+                     alt="FIKIH" class="rounded-lg w-full h-auto"/>
+            </figure>
+            <div class="card-body w-full md:w-1/2 pl-0 md:pl-6 mt-4 md:mt-0">
+                <h2 class="card-title text-black font-bold">AL-QUR'AN DAN HADIST</h2>
+                <p class="text-black italic">Pembelajaran Al-Qur'an di tingkat MI (Madrasah Ibtidaiyah) bertujuan untuk mengenalkan dan mengajarkan siswa cara membaca Al-Qur'an dengan tajwid yang benar. Selain itu, siswa juga diajarkan untuk memahami makna dari ayat-ayat Al-Qur'an dengan penjelasan yang sederhana dan mudah dipahami. Dalam pembelajaran ini, siswa akan diperkenalkan dengan surah-surah pendek yang umum digunakan dalam shalat, seperti Al-Fatihah, Al-Ikhlas, dan lainnya.
+
+                    Selain itu, pembelajaran juga mencakup kegiatan menulis Al-Qur'an untuk membantu siswa melatih kemampuan menulis ayat-ayat dengan rapi. Tadarus, atau membaca Al-Qur'an bersama-sama, juga menjadi bagian penting dari kegiatan pembelajaran untuk memperbaiki bacaan dan memperdalam pemahaman terhadap Al-Qur'an. Selain itu, siswa diajarkan adab-adab yang perlu diterapkan saat membaca Al-Qur'an, seperti bersuci dan menjaga kekhusyukan.
+                    
+                    Dalam hal pembelajaran Hadits, siswa dikenalkan dengan hadits-hadits yang relevan dengan kehidupan sehari-hari. Hadits-hadits tersebut disampaikan dengan penjelasan yang mudah dipahami, agar siswa bisa mengaplikasikannya dalam kehidupan mereka. Pembelajaran ini bertujuan untuk menumbuhkan rasa cinta kepada sunnah Nabi Muhammad SAW dan mengajarkan perilaku yang baik sesuai ajaran Islam.</p>
+            </div>
+        </div>
+
+
+        <h1 class="font-bold text-start text-black text-xl px-4 mb-4 mt-5" id="aa">AKIDAH AKHLAK</h1>
+        <div class="flex flex-col md:flex-row items-center">
+            <figure class="w-full md:w-1/2">
+                <img src="https://img.freepik.com/free-vector/cute-girl-boy-moslem-celebrating-eid-mubarak-cartoon-vector-icon-illustration-people-religion-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3579.jpg?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" 
+                     alt="FIKIH" class="rounded-lg w-full h-auto"/>
+            </figure>
+            <div class="card-body w-full md:w-1/2 pl-0 md:pl-6 mt-4 md:mt-0">
+                <h2 class="card-title text-black font-bold">AKIDAH AKHLAK</h2>
+                <p class="text-black italic">Pembelajaran Akidah dan Akhlak di tingkat MI (Madrasah Ibtidaiyah) sangat penting sebagai dasar pembentukan kepribadian dan penguatan nilai-nilai agama pada siswa. Dalam akidah, siswa diajarkan tentang keimanan kepada Allah, malaikat, kitab-kitab-Nya, rasul-rasul-Nya, hari akhir, dan takdir. Tujuannya agar mereka memahami pokok-pokok ajaran Islam dan memiliki dasar keyakinan yang kuat dalam agama. Akidah juga mengajarkan tentang tauhid atau keesaan Allah, serta pentingnya menjalankan ibadah dengan penuh keikhlasan.
+
+                    Sementara dalam pembelajaran akhlak, siswa diberikan pemahaman tentang etika dan perilaku yang baik sesuai ajaran Islam. Ini mencakup bagaimana bersikap terhadap orang tua, guru, teman, dan masyarakat, serta cara menjaga adab dalam kehidupan sehari-hari. Pembelajaran akhlak juga mengajarkan nilai-nilai seperti kejujuran, kesabaran, rendah hati, tanggung jawab, dan menghormati sesama. Hal ini bertujuan untuk membentuk karakter anak yang tidak hanya cerdas dalam ilmu, tetapi juga baik dalam perilaku dan akhlaknya sesuai dengan tuntunan Nabi Muhammad SAW.</p>
+            </div>
+        </div>
+
+        <h1 class="font-bold text-start text-black text-xl px-4 mb-4 mt-5" id="fikih">FIKIH</h1>
+        <div class="flex flex-col md:flex-row items-center">
+            <figure class="w-full md:w-1/2">
+                <img src="https://img.freepik.com/free-vector/imam-presents-quran-islamic-believers-front-mosque-crescent-dome-islamic-mosque_1150-48852.jpg?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" 
+                     alt="FIKIH" class="rounded-lg w-full h-auto"/>
+            </figure>
+            <div class="card-body w-full md:w-1/2 pl-0 md:pl-6 mt-4 md:mt-0">
+                <h2 class="card-title text-black font-bold">FIKIH</h2>
+                <p class="text-black italic">Pembelajaran Fikih di tingkat MI (Madrasah Ibtidaiyah) berfokus pada ajaran-ajaran praktis dalam kehidupan sehari-hari yang bersumber dari syariat Islam. Pada tingkat ini, siswa dikenalkan dengan dasar-dasar ibadah seperti shalat, puasa, zakat, dan haji, serta cara pelaksanaannya yang benar sesuai tuntunan Rasulullah SAW.
+
+                    Selain ibadah, fikih juga mencakup masalah-masalah lain yang berkaitan dengan muamalah, yaitu interaksi sosial dan ekonomi dalam Islam. Misalnya, bagaimana bertransaksi yang sesuai dengan prinsip-prinsip Islam, seperti jual beli, pinjaman, dan wakaf. Pembelajaran fikih di tingkat MI dirancang agar siswa bisa memahami dan mengaplikasikan hukum Islam dalam kehidupan sehari-hari mereka dengan cara yang mudah dan praktis.
+                    
+                    Di samping itu, siswa juga diajarkan tentang adab-adab dalam kehidupan sosial, seperti tata cara berpakaian, makan, berbicara, dan berperilaku sesuai ajaran Islam. Tujuan pembelajaran fikih adalah agar siswa dapat menjalankan hidup mereka sesuai dengan prinsip-prinsip Islam yang benar dan sesuai dengan tuntunan syariat.</p>
+            </div>
+        </div>
+
+
+        <h1 class="font-bold text-start text-black text-xl px-4 mb-4 mt-5" id="SKI">SEJARAH KEBUDAYAAN ISLAM</h1>
+        <div class="flex flex-col md:flex-row items-center">
+            <figure class="w-full md:w-1/2">
+                <img src="https://img.freepik.com/premium-vector/muslim-couple-praying-with-quran_24911-63386.jpg?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" 
+                     alt="FIKIH" class="rounded-lg w-full h-auto"/>
+            </figure>
+            <div class="card-body w-full md:w-1/2 pl-0 md:pl-6 mt-4 md:mt-0">
+                <h2 class="card-title text-black font-bold">SEJARAH KEBUDAYAAN ISLAM</h2>
+                <p class="text-black italic">Pembelajaran Sejarah Kebudayaan Islam di tingkat MI (Madrasah Ibtidaiyah) bertujuan untuk mengenalkan siswa pada perkembangan sejarah peradaban Islam sejak masa awal hingga perkembangan yang lebih luas. Di tingkat ini, siswa diperkenalkan dengan perjalanan sejarah kebangkitan Islam, dimulai dari zaman Nabi Muhammad SAW, perkembangan di Makkah dan Madinah, serta penaklukan-penaklukan yang dilakukan oleh para sahabat dan penerusnya.
+
+                    Selain itu, siswa juga dikenalkan dengan peran penting kebudayaan Islam dalam berbagai aspek, seperti ilmu pengetahuan, seni, arsitektur, sastra, dan peradaban yang berkembang di dunia Islam. Misalnya, tentang pembangunan masjid-masjid megah di berbagai negara Muslim, penemuan ilmiah yang signifikan, serta peran Islam dalam menjaga dan mengembangkan ilmu pengetahuan klasik dari Yunani dan Romawi.
+                    
+                    Pembelajaran ini juga mencakup pengenalan pada peradaban besar Islam yang berkembang di berbagai wilayah, seperti Baghdad, Andalusia, Ottoman, dan lainnya. Di sini, siswa diajarkan bagaimana Islam tidak hanya memengaruhi aspek spiritual, tetapi juga aspek sosial, politik, ekonomi, dan budaya masyarakat di berbagai belahan dunia.
+                    
+                    Tujuan dari pembelajaran ini adalah agar siswa dapat memahami bagaimana kebudayaan Islam berkembang dan memberikan kontribusi besar terhadap kemajuan peradaban dunia, serta dapat mengaplikasikan nilai-nilai kebudayaan Islam dalam kehidupan mereka sehari-hari.</p>
+            </div>
+        </div>
+
+
+        <h1 class="font-bold text-start text-black text-xl px-4 mb-4 mt-5" id="ba">BAHASA ARAB</h1>
+        <div class="flex flex-col md:flex-row items-center">
+            <figure class="w-full md:w-1/2">
+                <img src="https://img.freepik.com/premium-vector/islamic-kids_1281867-5199.jpg?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" 
+                     alt="FIKIH" class="rounded-lg w-full h-auto"/>
+            </figure>
+            <div class="card-body w-full md:w-1/2 pl-0 md:pl-6 mt-4 md:mt-0">
+                <h2 class="card-title text-black font-bold">BAHASA ARAB</h2>
+                <p class="text-black italic">Pembelajaran Bahasa Arab di tingkat MI (Madrasah Ibtidaiyah) sangat penting karena merupakan salah satu keterampilan dasar yang membantu siswa untuk lebih mendalami ajaran Islam, khususnya dalam memahami Al-Qur'an, Hadits, dan kitab-kitab Islam lainnya. Pada tingkat ini, siswa diajarkan untuk memahami dasar-dasar bahasa Arab yang mencakup huruf-huruf Arab, tata bahasa (nahwu dan sharaf), dan kosakata dasar.
+
+                    Selain itu, mereka juga belajar tentang struktur kalimat dalam bahasa Arab yang sederhana, sehingga mereka bisa memahami bagaimana kalimat-kalimat dalam Al-Qur'an dan Hadits terbentuk. Pembelajaran ini bertujuan untuk membantu siswa membaca, menulis, dan memahami teks-teks agama yang menggunakan bahasa Arab, serta meningkatkan kemampuan mereka dalam berkomunikasi menggunakan bahasa Arab dalam konteks yang lebih sederhana.
+                    
+                    Selain aspek tata bahasa, pembelajaran bahasa Arab juga mencakup pengenalan percakapan sehari-hari yang digunakan dalam lingkungan keagamaan dan sosial, seperti salam, doa-doa, dan ungkapan sehari-hari yang sering dipakai dalam kehidupan Islam. Hal ini bertujuan agar siswa bisa lebih mudah berinteraksi dan memahami berbagai budaya Islam yang menggunakan bahasa Arab sebagai bahasa pengantar utama.
+                    
+                    Secara keseluruhan, pembelajaran bahasa Arab di tingkat MI berfokus pada penguasaan bahasa Arab dasar yang relevan dengan ajaran Islam agar siswa dapat memperdalam pemahaman agama mereka dengan lebih baik.</p>
+            </div>
+        </div>
+
+<!-- Link ke file JavaScript -->
+<script src="../static/script.js"></script>
+
+<footer class="footer footer-center bg-white text-primary-content p-10">
+    <aside>
+      <img src="https://cdn-icons-png.freepik.com/256/12379/12379619.png?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" alt="Logo Arif Learning" width="50" height="50" class="h-10 w-10 rounded-full mr-3" />
+      <p class="font-bold">
+        Arif Learning
+        <br />
+        Sharing pembelajaran disini yuk.
+      </p>
+      <p>Copyright © 2025 - Arif Learning</p>
+  </footer>
+
+ 
+
+</body>
+</html>
+
+        

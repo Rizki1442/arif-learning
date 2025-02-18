@@ -1,0 +1,26 @@
+html,
+body {
+    background-color: white;
+    font-family: 'Poppins', sans-serif;;
+}
+
+.erd {
+    font-size: 3rem;
+}
+
+.erd2 {
+    font-size: 2rem;
+}
+
+.navbar{
+    background-color: white;
+    color:black;
+}
+
+.pelajaran{
+    background-color: white;
+}
+
+.menu{
+    background-color: white;
+}

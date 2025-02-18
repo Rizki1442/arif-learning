@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- DaisyUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS (Jika ada) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Home - Arif Learning{% endblock %}</title>
+    <link rel="icon" href="https://cdn-icons-png.freepik.com/256/12379/12379619.png?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar shadow shadow-lg sticky top-0 left-0 right-0 z-50 bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+            
+            <li>
+                <details>
+                  <summary>Pelajaran Mi</summary>
+                  <ul class="pelajaran p-2">
+                    <li><a href="{{ url_for('pelajaran_mi') }}#ah">Al-Qur'an Hadis</a></li>
+                    <li><a href="{{ url_for('pelajaran_mi') }}#aa">Akidah Akhlak</a></li>
+                    <li><a href="{{ url_for('pelajaran_mi') }}#fikih">Fikih</a></li>
+                    <li><a href="{{ url_for('pelajaran_mi') }}#SKI">Sejarah Kebudayaan Islam</a></li>
+                    <li><a href="{{ url_for('pelajaran_mi') }}#ba">Bahasa Arab</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>Pelajaran SD</summary>
+                  <ul class="pelajaran p-2">
+                    <li><a href="{{ url_for('pelajaran_sd') }}#mtk">Matematika</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#bi">Bahasa Indonesia</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#ipa">Ilmu Pengetahuan Alam</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#pp">Pendidikan Pancasila</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#senbud">Seni Budaya dan Prakarya</a></li>
+                    <li><a href="{{ url_for('pelajaran_sd') }}#pjok">Pendidikan Jasmani, Olahraga dan Kesehatan</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li><a href="{{ url_for('home') }}#about">Tentang Kami</a></li>
+              <li><a href="{{ url_for('home') }}#visimisi">Visi Misi</a></li>  
+            <li><a href="{{ url_for('home') }}#kontak">Hubungi Kami</a></li>  
+            <li><a href="{{ url_for('erd') }}">ERD</a></li>  
+            </ul>
+          </div>
+          <a class="text-xl text-black">Arif Learning</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            
+            <li>
+                <details>
+                    <summary>Pelajaran Mi</summary>
+                    <ul class="pelajaran p-2">
+                      <li><a href="{{ url_for('pelajaran_mi') }}#ah">Al-Qur'an Hadis</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#aa">Akidah Akhlak</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#fikih">Fikih</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#SKI">Sejarah Kebudayaan Islam</a></li>
+                      <li><a href="{{ url_for('pelajaran_mi') }}#ba">Bahasa Arab</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>Pelajaran SD</summary>
+                    <ul class="pelajaran p-2">
+                      <li><a href="{{ url_for('pelajaran_sd') }}#mtk">Matematika</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#bi">Bahasa Indonesia</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#ipa">Ilmu Pengetahuan Alam</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#pp">Pendidikan Pancasila</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#senbud">Seni Budaya dan Prakarya</a></li>
+                      <li><a href="{{ url_for('pelajaran_sd') }}#pjok">Pendidikan Jasmani, Olahraga dan Kesehatan</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li><a href="{{ url_for('home') }}#about">Tentang Kami</a></li>
+                <li><a href="{{ url_for('home') }}#visimisi">Visi Misi</a></li>
+              <li><a href="{{ url_for('home') }}#kontak">Hubungi Kami</a></li>  
+              <li><a href="{{ url_for('erd') }}">ERD</a></li>  
+          </ul>
+        </div>
+        <div class="navbar-end">
+            <a href="{{ url_for('home') }}">
+                <img src="https://cdn-icons-png.freepik.com/256/12379/12379619.png?ga=GA1.1.559232191.1739536249&semt=ais_hybrid"
+                     alt="Link" class="h-9 w-9 rounded-full object-cover md:h-9 md:w-9 min-h-[36px] min-w-[36px] mr-3">
+            </a>
+        </div>
+      </div>
+
+      <!-- Hero -->
+<div class="card w-full bg-white px-4 py-6">
+    <h1 class="erd font-bold text-center text-black">ERD</h1>
+    <h1 class="font-bold text-center text-black text-xl px-4 mb-10" id="sesak">Entity Relationship Diagram</h1>
+    <div class="flex flex-col md:flex-row items-center">
+        <figure class="w-full md:w-1/2">
+            <img src="../static/img/ERD_DENNA_HEALTH.PNG" alt="Sesak Nafas" class="rounded-lg w-full h-auto"/>
+        </figure>
+        <div class="card-body w-full md:w-1/2 p-6">
+            <p class="text-black italic text-justify">One-to-One (1:1): Pasien - Kontak (Satu pasien hanya memiliki satu kontak).</p>
+            <br>
+            <p class="text-black italic text-justify">One-to-Many (1:M): Doktor - Kontak dan Pasien - Pasien_Kondisi.</p>
+            <br>
+            <p class="text-black italic text-justify">Many-to-Many: Pasien - Kondisi_Kesehatan melalui tabel Pasien_Kondisi.</p>
+        </div>
+    </div>
+</div>
+
+<div class="card w-full bg-white px-10 py-6">
+    <h1 class="erd2 font-bold text-center text-black">5W 1H</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+        <div class="card bg-gray-100 p-6 rounded-lg shadow">
+            <h2 class="card-title text-black">What (Apa?)</h2>
+            <p class="text-black text-justify">Sistem DENNA HEALTH adalah aplikasi yang digunakan untuk mengelola data pasien, dokter, kondisi kesehatan, serta komunikasi antara pasien dan dokter. Sistem ini mencatat informasi seperti identitas pasien, riwayat penyakit, daftar kondisi kesehatan pasien, serta interaksi antara pasien dan dokter melalui fitur kontak.p>
+        </div>
+        <div class="card bg-gray-100 p-6 rounded-lg shadow">
+            <h2 class="card-title text-black">Who (Siapa?)</h2>
+            <p class="text-black text-justify"><strong>Pasien:</strong> Orang yang menggunakan aplikasi untuk mendapatkan layanan kesehatan.
+                <strong>Dokter:</strong> Profesional medis yang memberikan layanan konsultasi kepada pasien.
+                <strong>Admin:</strong> Pihak yang mengelola data dalam sistem dan memastikan operasional aplikasi berjalan dengan baik.
+                <strong>Sistem DENNA HEALTH:</strong> Aplikasi yang menyimpan, mengelola, dan menampilkan data yang diperlukan untuk layanan kesehatan.</p>
+        </div>
+        <div class="card bg-gray-100 p-6 rounded-lg shadow">
+            <h2 class="card-title text-black">When (Kapan?)</h2>
+            <p class="text-black text-justify">Pasien menggunakan aplikasi saat membutuhkan layanan kesehatan, baik untuk berkonsultasi dengan dokter maupun untuk melihat riwayat kesehatannya.
+                Dokter berinteraksi dalam aplikasi ketika ada pasien yang menghubungi mereka melalui fitur kontak.
+                Data pasien diperbarui setiap kali ada perubahan dalam kondisi kesehatan atau setiap kali pasien berkomunikasi dengan dokter.
+                Sistem berjalan 24/7, memungkinkan pasien dan dokter untuk mengakses informasi kapan saja.
+                </p>
+        </div>
+        <div class="card bg-gray-100 p-6 rounded-lg shadow">
+            <h2 class="card-title text-black">Where (Di mana?)</h2>
+            <p class="text-black text-justify">Aplikasi ini dapat diakses secara online melalui perangkat seperti komputer atau smartphone.
+                Penyimpanan data dilakukan di server aplikasi DENNA HEALTH, yang memungkinkan akses dari berbagai lokasi.
+                Komunikasi antara dokter dan pasien dilakukan melalui fitur kontak dalam aplikasi, termasuk kemungkinan terhubung ke WhatsApp melalui link yang disediakan oleh dokter.</p>
+        </div>
+        <div class="card bg-gray-100 p-6 rounded-lg shadow">
+            <h2 class="card-title text-black">Why (Mengapa?)</h2>
+            <p class="text-black text-justify">Aplikasi ini dibuat untuk mempermudah pasien mendapatkan layanan kesehatan secara online.
+                Dokter dapat melihat riwayat penyakit pasien secara langsung dalam sistem, sehingga mereka dapat memberikan diagnosis dan perawatan yang lebih baik.
+                Data kesehatan pasien dapat dikelola dengan lebih terstruktur, termasuk pencatatan kondisi kesehatan pasien dan riwayat konsultasi.
+                Dengan adanya fitur kontak, pasien dapat berkomunikasi dengan dokter tanpa harus datang langsung ke klinik atau rumah sakit.</p>
+        </div>
+        <div class="card bg-gray-100 p-6 rounded-lg shadow">
+            <h2 class="card-title text-black">How (Bagaimana?)</h2>
+            <p class="text-black text-justify">Pasien mendaftar dan menginput data diri serta riwayat penyakit dalam aplikasi.
+                Dokter mendaftar dan memasukkan informasi mereka, termasuk spesialisasi dan kontak WhatsApp.
+                Pasien dapat mencari dan menghubungi dokter melalui fitur kontak yang tersimpan dalam sistem.
+                Data riwayat penyakit pasien dapat diperbarui secara otomatis saat pasien memiliki kondisi kesehatan baru, yang akan tercatat dalam tabel Pasien_Kondisi.
+                Sistem menghubungkan pasien dan dokter berdasarkan riwayat kontak yang telah dilakukan sebelumnya.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Link ke file JavaScript -->
+<script src="../static/script.js"></script>
+
+<footer class="footer footer-center bg-white text-primary-content p-10">
+    <aside>
+      <img src="https://cdn-icons-png.freepik.com/256/12379/12379619.png?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" alt="Logo Arif Learning" width="50" height="50" class="h-10 w-10 rounded-full mr-3" />
+      <p class="font-bold">
+        Arif Learning
+        <br />
+        Sharing pembelajaran disini yuk.
+      </p>
+      <p>Copyright © 2025 - Arif Learning</p>
+  </footer>
+
+ 
+
+</body>
+</html>
