@@ -13,7 +13,7 @@
     <!-- Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}Home - Arif Learning{% endblock %}</title>
+    <title>{% block title %}ERD - Arif Learning{% endblock %}</title>
     <link rel="icon" href="https://cdn-icons-png.freepik.com/256/12379/12379619.png?ga=GA1.1.559232191.1739536249&semt=ais_hybrid" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -110,14 +110,21 @@
     <h1 class="font-bold text-center text-black text-xl px-4 mb-10" id="sesak">Entity Relationship Diagram</h1>
     <div class="flex flex-col md:flex-row items-center">
         <figure class="w-full md:w-1/2">
-            <img src="../static/img/ERD_DENNA_HEALTH.PNG" alt="Sesak Nafas" class="rounded-lg w-full h-auto"/>
+            <img src="../static/img/ERD_ARIF_LEARNING.jpg" alt="ERD" class="rounded-lg w-full h-auto"/>
         </figure>
         <div class="card-body w-full md:w-1/2 p-6">
-            <p class="text-black italic text-justify">One-to-One (1:1): Pasien - Kontak (Satu pasien hanya memiliki satu kontak).</p>
+            <p class="text-black italic text-justify">Siswa - Orang Tua: One-to-Many (1 siswa memiliki 1 orang tua, tapi orang tua bisa memiliki lebih dari satu siswa).</p>
             <br>
-            <p class="text-black italic text-justify">One-to-Many (1:M): Doktor - Kontak dan Pasien - Pasien_Kondisi.</p>
+            <p class="text-black italic text-justify">Siswa - Jawaban Siswa: One-to-Many (1 siswa bisa mengerjakan banyak kuis).</p>
             <br>
-            <p class="text-black italic text-justify">Many-to-Many: Pasien - Kondisi_Kesehatan melalui tabel Pasien_Kondisi.</p>
+            <p class="text-black italic text-justify">Guru - Materi Pembelajaran: One-to-Many (1 guru bisa mengajarkan banyak materi).</p>
+            <br>
+            <p class="text-black italic text-justify">Materi Pembelajaran - Kuis: One-to-Many (1 materi pembelajaran bisa memiliki banyak kuis).</p>
+            <br>
+            <p class="text-black italic text-justify">Siswa - Kuis: Many-to-Many (siswa bisa mengerjakan banyak kuis, dan kuis bisa diikuti oleh banyak siswa, sehingga membutuhkan tabel relasi, yaitu Jawaban Siswa).</p>
+            <br>
+            <p class="text-black italic text-justify">Satu Siswa hanya memiliki satu Profil, dan satu Profil hanya milik satu Siswa. Ini adalah relasi One-to-One.</p>
+            <br>
         </div>
     </div>
 </div>
@@ -127,43 +134,28 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         <div class="card bg-gray-100 p-6 rounded-lg shadow">
             <h2 class="card-title text-black">What (Apa?)</h2>
-            <p class="text-black text-justify">Sistem DENNA HEALTH adalah aplikasi yang digunakan untuk mengelola data pasien, dokter, kondisi kesehatan, serta komunikasi antara pasien dan dokter. Sistem ini mencatat informasi seperti identitas pasien, riwayat penyakit, daftar kondisi kesehatan pasien, serta interaksi antara pasien dan dokter melalui fitur kontak.p>
+            <p class="text-black">Arif Learning adalah platform pendidikan yang menyediakan sumber daya pembelajaran untuk siswa SD dan MI. Platform ini menawarkan berbagai materi pembelajaran, seperti buku digital, video, lembar kerja, kuis, dan permainan interaktif.</p>
         </div>
         <div class="card bg-gray-100 p-6 rounded-lg shadow">
             <h2 class="card-title text-black">Who (Siapa?)</h2>
-            <p class="text-black text-justify"><strong>Pasien:</strong> Orang yang menggunakan aplikasi untuk mendapatkan layanan kesehatan.
-                <strong>Dokter:</strong> Profesional medis yang memberikan layanan konsultasi kepada pasien.
-                <strong>Admin:</strong> Pihak yang mengelola data dalam sistem dan memastikan operasional aplikasi berjalan dengan baik.
-                <strong>Sistem DENNA HEALTH:</strong> Aplikasi yang menyimpan, mengelola, dan menampilkan data yang diperlukan untuk layanan kesehatan.</p>
+            <p class="text-black">Platform ini ditujukan untuk siswa, guru, dan orang tua, dengan tujuan memfasilitasi proses belajar mengajar. Arif Learning terutama menyasar siswa di sekolah MI dan SD, untuk membantu mereka memahami pelajaran yang sulit dengan cara yang menarik dan interaktif.</p>
         </div>
         <div class="card bg-gray-100 p-6 rounded-lg shadow">
             <h2 class="card-title text-black">When (Kapan?)</h2>
-            <p class="text-black text-justify">Pasien menggunakan aplikasi saat membutuhkan layanan kesehatan, baik untuk berkonsultasi dengan dokter maupun untuk melihat riwayat kesehatannya.
-                Dokter berinteraksi dalam aplikasi ketika ada pasien yang menghubungi mereka melalui fitur kontak.
-                Data pasien diperbarui setiap kali ada perubahan dalam kondisi kesehatan atau setiap kali pasien berkomunikasi dengan dokter.
-                Sistem berjalan 24/7, memungkinkan pasien dan dokter untuk mengakses informasi kapan saja.
+            <p class="text-black">Website ini tersedia setiap saat untuk diakses, memungkinkan pengguna untuk belajar kapan saja sesuai kebutuhan mereka.
                 </p>
         </div>
         <div class="card bg-gray-100 p-6 rounded-lg shadow">
             <h2 class="card-title text-black">Where (Di mana?)</h2>
-            <p class="text-black text-justify">Aplikasi ini dapat diakses secara online melalui perangkat seperti komputer atau smartphone.
-                Penyimpanan data dilakukan di server aplikasi DENNA HEALTH, yang memungkinkan akses dari berbagai lokasi.
-                Komunikasi antara dokter dan pasien dilakukan melalui fitur kontak dalam aplikasi, termasuk kemungkinan terhubung ke WhatsApp melalui link yang disediakan oleh dokter.</p>
+            <p class="text-black">Platform ini dapat diakses secara online di alamat https://arif-learning.vercel.app/.</p>
         </div>
         <div class="card bg-gray-100 p-6 rounded-lg shadow">
             <h2 class="card-title text-black">Why (Mengapa?)</h2>
-            <p class="text-black text-justify">Aplikasi ini dibuat untuk mempermudah pasien mendapatkan layanan kesehatan secara online.
-                Dokter dapat melihat riwayat penyakit pasien secara langsung dalam sistem, sehingga mereka dapat memberikan diagnosis dan perawatan yang lebih baik.
-                Data kesehatan pasien dapat dikelola dengan lebih terstruktur, termasuk pencatatan kondisi kesehatan pasien dan riwayat konsultasi.
-                Dengan adanya fitur kontak, pasien dapat berkomunikasi dengan dokter tanpa harus datang langsung ke klinik atau rumah sakit.</p>
+            <p class="text-black">Tujuan utama dari Arif Learning adalah memberikan akses mudah ke materi pelajaran yang bermanfaat, mendukung pendidikan yang lebih menyenangkan dan interaktif, serta membantu siswa lebih memahami konsep-konsep yang diajarkan di sekolah.</p>
         </div>
         <div class="card bg-gray-100 p-6 rounded-lg shadow">
             <h2 class="card-title text-black">How (Bagaimana?)</h2>
-            <p class="text-black text-justify">Pasien mendaftar dan menginput data diri serta riwayat penyakit dalam aplikasi.
-                Dokter mendaftar dan memasukkan informasi mereka, termasuk spesialisasi dan kontak WhatsApp.
-                Pasien dapat mencari dan menghubungi dokter melalui fitur kontak yang tersimpan dalam sistem.
-                Data riwayat penyakit pasien dapat diperbarui secara otomatis saat pasien memiliki kondisi kesehatan baru, yang akan tercatat dalam tabel Pasien_Kondisi.
-                Sistem menghubungkan pasien dan dokter berdasarkan riwayat kontak yang telah dilakukan sebelumnya.</p>
+            <p class="text-black">Platform ini menggabungkan teknologi digital dengan pendekatan pendidikan yang menyenangkan, memungkinkan siswa untuk belajar melalui berbagai media seperti video, buku digital, dan kuis. Interaksi dan gamifikasi menjadi bagian penting dalam proses pembelajaran di Arif Learning.</p>
         </div>
     </div>
 </div>
